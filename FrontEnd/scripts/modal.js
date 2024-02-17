@@ -55,8 +55,7 @@ export function generateModal(works) {
     figure.appendChild(deleteButton);
     modalImages.appendChild(figure);
 
-    deleteButton.addEventListener("click", (e) => {
-      e.preventDefault();
+    deleteButton.addEventListener("click", () => {
 
       // Image id
       let id = works[i].id;

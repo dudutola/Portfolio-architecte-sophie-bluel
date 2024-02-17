@@ -69,7 +69,13 @@ if (userLoginInfos) {
   sectionPortfolio.insertAdjacentElement("afterbegin", mode);
 
   const modifyButton = document.querySelector(".modify");
-  modifyButton.addEventListener("click", () => generateModal(works));
+  modifyButton.addEventListener("click", async() => {
+    const apiWorks = await fetch("http://localhost:5678/api/works");
+    const works = await apiWorks.json();
+
+    generateModal(works);
+  });
+
 
   // Not display filterBar
   const filterBar = document.querySelector(".filterbar");
